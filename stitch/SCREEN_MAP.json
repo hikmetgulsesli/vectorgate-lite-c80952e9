@@ -1,0 +1,20 @@
+[
+  {
+    "screenId": "034116cf66e6474895d436f0c021ae87",
+    "name": "Game Settings - VectorGate Lite",
+    "type": "settings",
+    "description": "Game Settings - VectorGate Lite screen",
+    "surfaceIds": [
+      "SURF_GAME_SETTINGS"
+    ]
+  },
+  {
+    "screenId": "7f651e5dee23472181445ee1318c3acb",
+    "name": "Gameplay - VectorGate Lite",
+    "type": "game",
+    "description": "Gameplay - VectorGate Lite screen",
+    "surfaceIds": [
+      "SURF_GAMEPLAY"
+    ]
+  }
+]

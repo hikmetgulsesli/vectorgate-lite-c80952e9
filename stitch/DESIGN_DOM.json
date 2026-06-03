@@ -1,0 +1,567 @@
+{
+  "generatedAt": "2026-06-03T13:43:09.289Z",
+  "screenCount": 2,
+  "screens": {
+    "034116cf66e6474895d436f0c021ae87": {
+      "screenId": "034116cf66e6474895d436f0c021ae87",
+      "materialSymbolsRequired": true,
+      "sections": [
+        {
+          "tag": "header",
+          "layout": "flex-row",
+          "classes": [
+            "flex",
+            "justify-between",
+            "items-center",
+            "px-hud-safe-area",
+            "h-16",
+            "w-full",
+            "z-50",
+            "fixed",
+            "top-0",
+            "left-0"
+          ],
+          "childCount": 2
+        },
+        {
+          "tag": "main",
+          "layout": "flex-col",
+          "classes": [
+            "pt-28",
+            "pb-24",
+            "px-container-padding",
+            "max-w-7xl",
+            "mx-auto",
+            "min-h-screen",
+            "flex",
+            "flex-col",
+            "gap-8",
+            "relative"
+          ],
+          "childCount": 40
+        }
+      ],
+      "buttons": [
+        {
+          "kind": "button",
+          "label": "settings",
+          "classes": [
+            "flex",
+            "items-center",
+            "justify-center",
+            "p-2",
+            "rounded-full",
+            "hover:bg-primary/10",
+            "hover:text-primary",
+            "transition-all",
+            "duration-150",
+            "scale-95",
+            "active:scale-90",
+            "transition-transform"
+          ],
+          "icon": "settings",
+          "action": "navigate",
+          "expectedBehavior": "navigate:/settings",
+          "expectedRoute": "/settings",
+          "routeInferred": true
+        },
+        {
+          "kind": "button",
+          "label": "pause",
+          "classes": [
+            "flex",
+            "items-center",
+            "justify-center",
+            "p-2",
+            "rounded-full",
+            "hover:bg-primary/10",
+            "hover:text-primary",
+            "transition-all",
+            "duration-150",
+            "scale-95",
+            "active:scale-90",
+            "transition-transform"
+          ],
+          "icon": "pause",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "Save Preferences",
+          "classes": [
+            "flex-1",
+            "py-4",
+            "px-6",
+            "border",
+            "border-primary",
+            "text-primary",
+            "font-label-sm",
+            "uppercase",
+            "tracking-widest",
+            "transition-all",
+            "duration-200",
+            "hover:bg-primary",
+            "hover:text-on-primary",
+            "hover:shadow-[0_0_20px_rgba(0,220,229,0.6)]",
+            "active:scale-95",
+            "text-center",
+            "relative",
+            "overflow-hidden",
+            "group"
+          ],
+          "icon": null,
+          "action": "form-submit",
+          "expectedBehavior": "validate inputs and submit/apply changes"
+        },
+        {
+          "kind": "button",
+          "label": "Return to Game",
+          "classes": [
+            "flex-1",
+            "py-4",
+            "px-6",
+            "border",
+            "border-surface-variant",
+            "text-on-surface-variant",
+            "font-label-sm",
+            "uppercase",
+            "tracking-widest",
+            "transition-all",
+            "duration-200",
+            "hover:border-on-surface",
+            "hover:text-on-surface",
+            "active:scale-95",
+            "text-center"
+          ],
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        }
+      ],
+      "inputs": [
+        {
+          "kind": "input",
+          "type": "radio",
+          "label": "difficulty",
+          "placeholder": "",
+          "name": "difficulty",
+          "classes": [
+            "peer",
+            "sr-only"
+          ],
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        },
+        {
+          "kind": "input",
+          "type": "range",
+          "label": "range",
+          "placeholder": "",
+          "name": "",
+          "classes": [
+            "w-full",
+            "z-10",
+            "relative"
+          ],
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        }
+      ],
+      "navLinks": [],
+      "cards": [],
+      "icons": [
+        "settings",
+        "pause",
+        "volume_down",
+        "volume_up",
+        "sports_esports"
+      ],
+      "images": [],
+      "cssVars": {},
+      "colorPalette": {
+        "inverse-primary": "#00696e",
+        "on-error-container": "#ffdad6",
+        "inverse-on-surface": "#313030",
+        "error": "#ffb4ab",
+        "surface-bright": "#3a3939",
+        "outline": "#849495",
+        "surface-tint": "#00dce5",
+        "surface-container-low": "#1c1b1b",
+        "tertiary-fixed-dim": "#2ae500",
+        "on-primary": "#003739",
+        "secondary-fixed-dim": "#ffabf3",
+        "primary-fixed-dim": "#00dce5",
+        "primary-fixed": "#63f7ff",
+        "surface-container-lowest": "#0e0e0e",
+        "on-secondary-fixed-variant": "#810081",
+        "surface": "#131313",
+        "surface-container-highest": "#353534",
+        "surface-container": "#201f1f",
+        "on-surface-variant": "#b9caca",
+        "on-background": "#e5e2e1",
+        "on-surface": "#e5e2e1",
+        "background": "#131313",
+        "secondary-fixed": "#ffd7f5",
+        "on-secondary-fixed": "#380038",
+        "surface-variant": "#353534",
+        "on-primary-fixed-variant": "#004f53",
+        "tertiary-fixed": "#79ff5b",
+        "on-secondary": "#5b005b",
+        "on-primary-container": "#006c71",
+        "on-tertiary": "#053900",
+        "primary": "#e9feff",
+        "on-tertiary-fixed-variant": "#095300",
+        "tertiary-container": "#3bff17",
+        "secondary": "#ffabf3",
+        "on-primary-fixed": "#002021",
+        "on-tertiary-container": "#107100",
+        "secondary-container": "#fe00fe",
+        "on-error": "#690005",
+        "error-container": "#93000a",
+        "inverse-surface": "#e5e2e1",
+        "tertiary": "#efffe4",
+        "primary-container": "#00f5ff",
+        "outline-variant": "#3a494a",
+        "on-secondary-container": "#500050",
+        "on-tertiary-fixed": "#022100",
+        "surface-container-high": "#2a2a2a",
+        "surface-dim": "#131313"
+      },
+      "fonts": [
+        "Material Symbols Outlined",
+        "Space Grotesk",
+        "Geist"
+      ],
+      "layoutHints": {
+        "gridCols": 1,
+        "flexDirection": "col",
+        "gap": "6"
+      },
+      "behaviorContract": [
+        {
+          "kind": "button",
+          "label": "settings",
+          "icon": "settings",
+          "action": "navigate",
+          "route": "/settings",
+          "expectedBehavior": "navigate:/settings"
+        },
+        {
+          "kind": "button",
+          "label": "pause",
+          "icon": "pause",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "Save Preferences",
+          "icon": null,
+          "action": "form-submit",
+          "expectedBehavior": "validate inputs and submit/apply changes"
+        },
+        {
+          "kind": "button",
+          "label": "Return to Game",
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "input",
+          "label": "difficulty",
+          "type": "radio",
+          "placeholder": "",
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        },
+        {
+          "kind": "input",
+          "label": "range",
+          "type": "range",
+          "placeholder": "",
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        }
+      ],
+      "tabBar": [],
+      "title": "Game Settings - VectorGate Lite"
+    },
+    "7f651e5dee23472181445ee1318c3acb": {
+      "screenId": "7f651e5dee23472181445ee1318c3acb",
+      "materialSymbolsRequired": true,
+      "sections": [
+        {
+          "tag": "nav",
+          "layout": "flex-row",
+          "classes": [
+            "flex",
+            "justify-between",
+            "items-start",
+            "px-hud-safe-area",
+            "pt-hud-safe-area",
+            "w-full",
+            "z-50",
+            "absolute",
+            "top-0",
+            "left-0"
+          ],
+          "childCount": 16
+        }
+      ],
+      "buttons": [
+        {
+          "kind": "button",
+          "label": "settings",
+          "classes": [
+            "w-10",
+            "h-10",
+            "flex",
+            "items-center",
+            "justify-center",
+            "border",
+            "border-primary",
+            "text-primary",
+            "hover:bg-primary/20",
+            "hover:text-primary",
+            "transition-all",
+            "duration-150",
+            "scale-95",
+            "active:scale-90",
+            "bg-surface/60",
+            "backdrop-blur-md",
+            "rounded",
+            "group",
+            "relative",
+            "overflow-hidden"
+          ],
+          "icon": "settings",
+          "action": "navigate",
+          "expectedBehavior": "navigate:/settings",
+          "expectedRoute": "/settings",
+          "routeInferred": true
+        },
+        {
+          "kind": "button",
+          "label": "Esc",
+          "classes": [
+            "w-10",
+            "h-10",
+            "flex",
+            "items-center",
+            "justify-center",
+            "border",
+            "border-primary",
+            "text-primary",
+            "hover:bg-primary/20",
+            "hover:text-primary",
+            "transition-all",
+            "duration-150",
+            "scale-95",
+            "active:scale-90",
+            "bg-surface/60",
+            "backdrop-blur-md",
+            "rounded",
+            "group",
+            "relative",
+            "overflow-hidden"
+          ],
+          "icon": "pause",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "Sector 03",
+          "classes": [],
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "Shield Integrity",
+          "classes": [],
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "x4 Multiplier 001250",
+          "classes": [],
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "Pause (Esc)",
+          "classes": [],
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "Esc",
+          "classes": [],
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        }
+      ],
+      "inputs": [],
+      "navLinks": [],
+      "cards": [],
+      "icons": [
+        "settings",
+        "pause",
+        "schedule",
+        "emoji_events"
+      ],
+      "images": [],
+      "cssVars": {},
+      "colorPalette": {
+        "inverse-primary": "#00696e",
+        "on-error-container": "#ffdad6",
+        "inverse-on-surface": "#313030",
+        "error": "#ffb4ab",
+        "surface-bright": "#3a3939",
+        "outline": "#849495",
+        "surface-tint": "#00dce5",
+        "surface-container-low": "#1c1b1b",
+        "tertiary-fixed-dim": "#2ae500",
+        "on-primary": "#003739",
+        "secondary-fixed-dim": "#ffabf3",
+        "primary-fixed-dim": "#00dce5",
+        "primary-fixed": "#63f7ff",
+        "surface-container-lowest": "#0e0e0e",
+        "on-secondary-fixed-variant": "#810081",
+        "surface": "#131313",
+        "surface-container-highest": "#353534",
+        "surface-container": "#201f1f",
+        "on-surface-variant": "#b9caca",
+        "on-background": "#e5e2e1",
+        "on-surface": "#e5e2e1",
+        "background": "#131313",
+        "secondary-fixed": "#ffd7f5",
+        "on-secondary-fixed": "#380038",
+        "surface-variant": "#353534",
+        "on-primary-fixed-variant": "#004f53",
+        "tertiary-fixed": "#79ff5b",
+        "on-secondary": "#5b005b",
+        "on-primary-container": "#006c71",
+        "on-tertiary": "#053900",
+        "primary": "#e9feff",
+        "on-tertiary-fixed-variant": "#095300",
+        "tertiary-container": "#3bff17",
+        "secondary": "#ffabf3",
+        "on-primary-fixed": "#002021",
+        "on-tertiary-container": "#107100",
+        "secondary-container": "#fe00fe",
+        "on-error": "#690005",
+        "error-container": "#93000a",
+        "inverse-surface": "#e5e2e1",
+        "tertiary": "#efffe4",
+        "primary-container": "#00f5ff",
+        "outline-variant": "#3a494a",
+        "on-secondary-container": "#500050",
+        "on-tertiary-fixed": "#022100",
+        "surface-container-high": "#2a2a2a",
+        "surface-dim": "#131313"
+      },
+      "fonts": [
+        "Material Symbols Outlined",
+        "Space Grotesk",
+        "Geist"
+      ],
+      "layoutHints": {
+        "flexDirection": "col",
+        "gap": "2"
+      },
+      "behaviorContract": [
+        {
+          "kind": "button",
+          "label": "settings",
+          "icon": "settings",
+          "action": "navigate",
+          "route": "/settings",
+          "expectedBehavior": "navigate:/settings"
+        },
+        {
+          "kind": "button",
+          "label": "Esc",
+          "icon": "pause",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "Sector 03",
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "Shield Integrity",
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "x4 Multiplier 001250",
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "Pause (Esc)",
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "Esc",
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        }
+      ],
+      "tabBar": [
+        {
+          "kind": "button",
+          "label": "Sector 03",
+          "icon": null,
+          "active": false
+        },
+        {
+          "kind": "button",
+          "label": "Shield Integrity",
+          "icon": null,
+          "active": false
+        },
+        {
+          "kind": "button",
+          "label": "x4 Multiplier 001250",
+          "icon": null,
+          "active": true
+        },
+        {
+          "kind": "button",
+          "label": "Pause (Esc)",
+          "icon": null,
+          "active": true
+        },
+        {
+          "kind": "button",
+          "label": "Esc",
+          "icon": null,
+          "active": false
+        }
+      ],
+      "title": "Gameplay - VectorGate Lite"
+    }
+  }
+}

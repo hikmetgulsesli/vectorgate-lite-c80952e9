@@ -1,0 +1,24 @@
+[
+  {
+    "screenId": "034116cf66e6474895d436f0c021ae87",
+    "title": "Game Settings - VectorGate Lite",
+    "htmlFile": "034116cf66e6474895d436f0c021ae87.html",
+    "deviceType": "DESKTOP",
+    "htmlUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ6Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpZCiVodG1sX2Y1MTJkMDllNzZmMjQ5M2FhYmI3MjU4YzBiNGVhZjJhEgsSBxCN19Wi9xcYAZIBIgoKcHJvamVjdF9pZBIUQhIxNDQ2NjYxNTY0NzQ2NjQ2MDg&filename=&opi=96797242",
+    "localHtml": "/Users/setrox/projects/vectorgate-lite-c80952e9/stitch/034116cf66e6474895d436f0c021ae87.html",
+    "surfaceIds": [
+      "SURF_GAME_SETTINGS"
+    ]
+  },
+  {
+    "screenId": "7f651e5dee23472181445ee1318c3acb",
+    "title": "Gameplay - VectorGate Lite",
+    "htmlFile": "7f651e5dee23472181445ee1318c3acb.html",
+    "deviceType": "DESKTOP",
+    "htmlUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ6Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpZCiVodG1sX2E5ZTJhZDlkODBlZjRkNjZiNzQxYTI5NWM5NjQ1N2Q3EgsSBxCN19Wi9xcYAZIBIgoKcHJvamVjdF9pZBIUQhIxNDQ2NjYxNTY0NzQ2NjQ2MDg&filename=&opi=96797242",
+    "localHtml": "/Users/setrox/projects/vectorgate-lite-c80952e9/stitch/7f651e5dee23472181445ee1318c3acb.html",
+    "surfaceIds": [
+      "SURF_GAMEPLAY"
+    ]
+  }
+]
