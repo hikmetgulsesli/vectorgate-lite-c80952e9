@@ -1,0 +1,60 @@
+[
+  {
+    "screenId": "034116cf66e6474895d436f0c021ae87",
+    "title": "Game Settings - VectorGate Lite",
+    "componentName": "GameSettingsVectorgateLite",
+    "file": "src/screens/GameSettingsVectorgateLite.tsx",
+    "buttons": 4,
+    "inputs": 5,
+    "links": 0,
+    "actions": [
+      {
+        "id": "settings-1",
+        "kind": "button",
+        "label": "Settings",
+        "index": 0
+      },
+      {
+        "id": "pause-2",
+        "kind": "button",
+        "label": "Pause",
+        "index": 1
+      },
+      {
+        "id": "save-preferences-3",
+        "kind": "button",
+        "label": "Save Preferences",
+        "index": 2
+      },
+      {
+        "id": "return-to-game-4",
+        "kind": "button",
+        "label": "Return to Game",
+        "index": 3
+      }
+    ]
+  },
+  {
+    "screenId": "7f651e5dee23472181445ee1318c3acb",
+    "title": "Gameplay - VectorGate Lite",
+    "componentName": "GameplayVectorgateLite",
+    "file": "src/screens/GameplayVectorgateLite.tsx",
+    "buttons": 2,
+    "inputs": 0,
+    "links": 0,
+    "actions": [
+      {
+        "id": "settings-1",
+        "kind": "button",
+        "label": "Settings",
+        "index": 0
+      },
+      {
+        "id": "pause-esc-2",
+        "kind": "button",
+        "label": "Pause (Esc)",
+        "index": 1
+      }
+    ]
+  }
+]
