@@ -1,0 +1,153 @@
+[
+  {
+    "screenId": "034116cf66e6474895d436f0c021ae87",
+    "screenTitle": "Game Settings - VectorGate Lite",
+    "deviceType": "DESKTOP",
+    "elements": [
+      {
+        "type": "button",
+        "label": "settings",
+        "line": 174
+      },
+      {
+        "type": "button",
+        "label": "pause",
+        "line": 178
+      },
+      {
+        "type": "button",
+        "label": "Save Preferences",
+        "line": 301
+      },
+      {
+        "type": "button",
+        "label": "Return to Game",
+        "line": 305
+      },
+      {
+        "type": "input",
+        "label": "radio",
+        "inputType": "radio",
+        "line": 198
+      },
+      {
+        "type": "input",
+        "label": "radio",
+        "inputType": "radio",
+        "line": 204
+      },
+      {
+        "type": "input",
+        "label": "radio",
+        "inputType": "radio",
+        "line": 210
+      },
+      {
+        "type": "input",
+        "label": "range",
+        "inputType": "range",
+        "line": 226
+      },
+      {
+        "type": "input",
+        "label": "range",
+        "inputType": "range",
+        "line": 246
+      }
+    ],
+    "navigation": [],
+    "buttons": [
+      {
+        "type": "button",
+        "label": "settings",
+        "line": 174
+      },
+      {
+        "type": "button",
+        "label": "pause",
+        "line": 178
+      },
+      {
+        "type": "button",
+        "label": "Save Preferences",
+        "line": 301
+      },
+      {
+        "type": "button",
+        "label": "Return to Game",
+        "line": 305
+      }
+    ],
+    "inputs": [
+      {
+        "type": "input",
+        "label": "radio",
+        "inputType": "radio",
+        "line": 198
+      },
+      {
+        "type": "input",
+        "label": "radio",
+        "inputType": "radio",
+        "line": 204
+      },
+      {
+        "type": "input",
+        "label": "radio",
+        "inputType": "radio",
+        "line": 210
+      },
+      {
+        "type": "input",
+        "label": "range",
+        "inputType": "range",
+        "line": 226
+      },
+      {
+        "type": "input",
+        "label": "range",
+        "inputType": "range",
+        "line": 246
+      }
+    ],
+    "hardcodedData": [],
+    "totalInteractive": 9,
+    "requiresRouter": false,
+    "requiresDragDrop": false
+  },
+  {
+    "screenId": "7f651e5dee23472181445ee1318c3acb",
+    "screenTitle": "Gameplay - VectorGate Lite",
+    "deviceType": "DESKTOP",
+    "elements": [
+      {
+        "type": "button",
+        "label": "settings",
+        "line": 190
+      },
+      {
+        "type": "button",
+        "label": "Esc",
+        "line": 194
+      }
+    ],
+    "navigation": [],
+    "buttons": [
+      {
+        "type": "button",
+        "label": "settings",
+        "line": 190
+      },
+      {
+        "type": "button",
+        "label": "Esc",
+        "line": 194
+      }
+    ],
+    "inputs": [],
+    "hardcodedData": [],
+    "totalInteractive": 2,
+    "requiresRouter": false,
+    "requiresDragDrop": false
+  }
+]
