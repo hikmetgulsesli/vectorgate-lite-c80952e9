@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useMemo } from "react";
 import {
   GameSettingsVectorgateLite,
   GameplayVectorgateLite,
@@ -15,6 +15,9 @@ import {
   savePreferences,
   setHighScore,
 } from "./features/vectorgate-lite/vectorgate-lite.repo";
+import { actStartGame } from "./features/surf-gameplay/act_start_game";
+import { actPauseGame } from "./features/surf-gameplay/act_pause_game";
+import { actRestartGame } from "./features/surf-gameplay/act_restart_game";
 
 function useGlobalApp() {
   const runtime = getOrCreateRuntime();
@@ -41,24 +44,26 @@ function useGlobalApp() {
 export default function App() {
   const { state, screen } = useGlobalApp();
 
-  const gameplayActions = {
-    "settings-1": () => setScreen("settings"),
-    "pause-esc-2": () => {
-      getOrCreateRuntime().setPaused(!getOrCreateRuntime().state.paused);
-    },
-  };
+  const gameplayActions = useMemo(
+    () => ({
+      "settings-1": () => setScreen("settings"),
+      "pause-esc-2": () => actPauseGame(),
+    }),
+    []
+  );
 
-  const settingsActions = {
-    "settings-1": () => setScreen("settings"),
-    "pause-2": () => {
-      getOrCreateRuntime().setPaused(!getOrCreateRuntime().state.paused);
-    },
-    "save-preferences-3": () => {
-      savePreferences(loadPreferences());
-      setScreen("gameplay");
-    },
-    "return-to-game-4": () => setScreen("gameplay"),
-  };
+  const settingsActions = useMemo(
+    () => ({
+      "settings-1": () => setScreen("settings"),
+      "pause-2": () => actPauseGame(),
+      "save-preferences-3": () => {
+        savePreferences(loadPreferences());
+        setScreen("gameplay");
+      },
+      "return-to-game-4": () => setScreen("gameplay"),
+    }),
+    []
+  );
 
   return (
     <div
@@ -99,6 +104,9 @@ declare global {
         resume: () => void;
         reset: () => void;
         setScreen: (s: "gameplay" | "settings" | "menu") => void;
+        startGame: () => void;
+        pauseGame: () => void;
+        restartGame: () => void;
       };
     };
   }
@@ -118,5 +126,8 @@ window.app = {
       resetRuntime().start();
     },
     setScreen,
+    startGame: actStartGame,
+    pauseGame: actPauseGame,
+    restartGame: actRestartGame,
   },
 };
