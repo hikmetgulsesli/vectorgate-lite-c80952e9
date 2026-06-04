@@ -15,6 +15,8 @@ import {
   savePreferences,
   setHighScore,
 } from "./features/vectorgate-lite/vectorgate-lite.repo";
+import { actSavePreferences } from "./features/surf-game-settings/act_save_preferences";
+import { actReturnToGameplay } from "./features/surf-game-settings/act_return_to_gameplay";
 
 function useGlobalApp() {
   const runtime = getOrCreateRuntime();
@@ -53,11 +55,8 @@ export default function App() {
     "pause-2": () => {
       getOrCreateRuntime().setPaused(!getOrCreateRuntime().state.paused);
     },
-    "save-preferences-3": () => {
-      savePreferences(loadPreferences());
-      setScreen("gameplay");
-    },
-    "return-to-game-4": () => setScreen("gameplay"),
+    "save-preferences-3": () => actSavePreferences(),
+    "return-to-game-4": () => actReturnToGameplay(),
   };
 
   return (
