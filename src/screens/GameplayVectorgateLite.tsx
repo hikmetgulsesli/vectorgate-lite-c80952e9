@@ -27,11 +27,11 @@ export function GameplayVectorgateLite({ actions, runtime }: GameplayVectorgateL
       {/* Playfield Elements (Center) */}
       <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 pointer-events-none w-[calc(100vw-48px)] max-w-[360px] aspect-square md:w-[600px] md:h-[600px] md:max-w-none">
       {/* Gate 1 (Outer - Magenta) */}
-      <div className="gate-outer absolute top-1/2 left-1/2 border-[4px] border-secondary border-dashed rounded-full opacity-60 filter blur-[1px] w-[calc(100vw-48px)] max-w-[360px] aspect-square md:w-[500px] md:h-[500px] md:max-w-none" style={{boxShadow: "0 0 30px rgba(255, 171, 243, 0.3) inset, 0 0 30px rgba(255, 171, 243, 0.3)"}}></div>
+      <div className="gate-outer absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 border-[4px] border-secondary border-dashed rounded-full opacity-60 filter blur-[1px] w-[calc(100vw-48px)] max-w-[360px] aspect-square md:w-[500px] md:h-[500px] md:max-w-none" style={{boxShadow: "0 0 30px rgba(255, 171, 243, 0.3) inset, 0 0 30px rgba(255, 171, 243, 0.3)"}}></div>
       {/* Gate 2 (Inner - Lime) */}
-      <div className="gate-inner absolute top-1/2 left-1/2 w-[300px] h-[300px] border-[6px] border-tertiary-container border-dotted rounded-full opacity-80" style={{boxShadow: "0 0 20px rgba(59, 255, 23, 0.4) inset, 0 0 20px rgba(59, 255, 23, 0.4)"}}></div>
+      <div className="gate-inner absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] border-[6px] border-tertiary-container border-dotted rounded-full opacity-80" style={{boxShadow: "0 0 20px rgba(59, 255, 23, 0.4) inset, 0 0 20px rgba(59, 255, 23, 0.4)"}}></div>
       {/* Player Signal (Center - Cyan) */}
-      <div className="signal-core absolute top-1/2 left-1/2 w-6 h-6 bg-primary rounded-full z-20"></div>
+      <div className="signal-core absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-6 h-6 bg-primary rounded-full z-20"></div>
       {/* Signal Trail/Motion */}
       <div className="absolute top-1/2 left-1/2 w-20 h-1 bg-gradient-to-l from-primary to-transparent transform -translate-y-1/2 -translate-x-full opacity-50 filter blur-[2px]"></div>
       </div>
@@ -49,7 +49,7 @@ export function GameplayVectorgateLite({ actions, runtime }: GameplayVectorgateL
       {/* Center HUD: Health Bar (Progress Bar Component) */}
       <div className="flex flex-col items-center gap-2 mt-4 pointer-events-auto">
       <span className="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">Shield Integrity</span>
-      <div className="flex gap-1 w-64 h-3 bg-surface-container-highest border border-outline-variant p-[2px]">
+      <div className="flex gap-1 w-full max-w-64 h-3 bg-surface-container-highest border border-outline-variant p-[2px]">
       {/* Segmented Health */}
       <div className="h-full w-1/5 bg-tertiary-container shadow-[0_0_10px_rgba(59,255,23,0.8)]"></div>
       <div className="h-full w-1/5 bg-tertiary-container shadow-[0_0_10px_rgba(59,255,23,0.8)]"></div>
