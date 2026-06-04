@@ -19,7 +19,19 @@ export interface GameplayVectorgateLiteProps {
 }
 
 export function GameplayVectorgateLite({ actions, runtime }: GameplayVectorgateLiteProps) {
-  void runtime;
+  const score = runtime?.score ?? 0;
+  const lives = runtime?.lives ?? 3;
+  const energy = runtime?.energy ?? 100;
+  const paused = runtime?.paused ?? false;
+  const maxLives = 5;
+  const shieldPercent = Math.max(0, Math.min(100, Math.round((energy / 100) * 100)));
+  const scoreStr = String(score).padStart(6, "0");
+  const targetScore = 5000;
+  const targetStr = String(targetScore).padStart(6, "0");
+  const minutes = Math.floor(score / 1800);
+  const seconds = Math.floor((score % 1800) / 30);
+  const centis = Math.floor(((score % 1800) % 30) * 3.33);
+  const timeStr = `${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}.${String(centis).padStart(2, "0")}`;
   return (
     <>
       {/* Playfield Canvas (Background) */}
@@ -51,21 +63,21 @@ export function GameplayVectorgateLite({ actions, runtime }: GameplayVectorgateL
       <span className="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">Shield Integrity</span>
       <div className="flex gap-1 w-64 h-3 bg-surface-container-highest border border-outline-variant p-[2px]">
       {/* Segmented Health */}
-      <div className="h-full w-1/5 bg-tertiary-container shadow-[0_0_10px_rgba(59,255,23,0.8)]"></div>
-      <div className="h-full w-1/5 bg-tertiary-container shadow-[0_0_10px_rgba(59,255,23,0.8)]"></div>
-      <div className="h-full w-1/5 bg-tertiary-container shadow-[0_0_10px_rgba(59,255,23,0.8)]"></div>
-      <div className="h-full w-1/5 bg-tertiary-container shadow-[0_0_10px_rgba(59,255,23,0.8)]"></div>
-      {/* Empty Segment */}
-      <div className="h-full w-1/5 bg-surface-container border border-outline-variant/30"></div>
+      {Array.from({ length: maxLives }).map((_, i) => (
+        <div
+          key={i}
+          className={`h-full w-1/5 ${i < lives ? "bg-tertiary-container shadow-[0_0_10px_rgba(59,255,23,0.8)]" : "bg-surface-container border border-outline-variant/30"}`}
+        ></div>
+      ))}
       </div>
-      <span className="font-headline-md text-headline-md text-tertiary-container neon-glow-tertiary">80%</span>
+      <span className="font-headline-md text-headline-md text-tertiary-container neon-glow-tertiary">{shieldPercent}%</span>
       </div>
       {/* Right HUD: Score & Actions */}
       <div className="flex flex-col items-end gap-4 pointer-events-auto">
       {/* Score Multiplier & Score */}
       <div className="flex flex-col items-end score-active">
       <span className="font-label-sm text-label-sm uppercase tracking-widest text-secondary neon-glow-secondary">x4 Multiplier</span>
-      <span className="font-display-xl text-display-xl text-primary neon-glow-primary tabular-nums tracking-wider">001250</span>
+      <span className="font-display-xl text-display-xl text-primary neon-glow-primary tabular-nums tracking-wider">{scoreStr}</span>
       </div>
       {/* Trailing Icons (Shared Component Logic) */}
       <div className="flex gap-4">
@@ -86,17 +98,36 @@ export function GameplayVectorgateLite({ actions, runtime }: GameplayVectorgateL
       {/* Left: Session Time */}
       <div className="flex items-center gap-2 bg-surface/40 backdrop-blur-md border border-primary/30 p-2 rounded pointer-events-auto scanline">
       <Clock className="text-primary text-sm" aria-hidden={true} focusable="false" />
-      <span className="font-headline-md text-headline-md text-primary neon-glow-primary text-lg tabular-nums">02:45.33</span>
+      <span className="font-headline-md text-headline-md text-primary neon-glow-primary text-lg tabular-nums">{timeStr}</span>
       </div>
       {/* Right: High Score */}
       <div className="flex flex-col items-end pointer-events-auto">
       <span className="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant mb-1">Target Score</span>
       <div className="flex items-center gap-2 bg-surface/40 backdrop-blur-md border border-primary/30 p-2 rounded scanline">
       <Trophy className="text-secondary text-sm" aria-hidden={true} focusable="false" />
-      <span className="font-headline-md text-headline-md text-on-surface opacity-80 text-lg tabular-nums">005000</span>
+      <span className="font-headline-md text-headline-md text-on-surface opacity-80 text-lg tabular-nums">{targetStr}</span>
       </div>
       </div>
       </div>
+      {paused && (
+        <div className="absolute inset-0 z-[60] flex items-center justify-center bg-black/70 backdrop-blur-sm">
+          <div className="flex flex-col items-center gap-4">
+            <span className="font-display-xl text-display-xl text-primary neon-glow-primary">PAUSED</span>
+            <button
+              className="px-6 py-2 border border-primary text-primary hover:bg-primary/20 transition-colors rounded"
+              onClick={actions?.["pause-esc-2"]}
+            >
+              Resume
+            </button>
+            <button
+              className="px-6 py-2 border border-secondary text-secondary hover:bg-secondary/20 transition-colors rounded"
+              onClick={actions?.["settings-1"]}
+            >
+              Settings
+            </button>
+          </div>
+        </div>
+      )}
     </>
   );
 }
