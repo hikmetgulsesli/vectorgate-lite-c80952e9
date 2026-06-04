@@ -25,18 +25,18 @@ export function GameplayVectorgateLite({ actions, runtime }: GameplayVectorgateL
       {/* Playfield Canvas (Background) */}
       <div className="absolute inset-0 bg-grid z-0"></div>
       {/* Playfield Elements (Center) */}
-      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 pointer-events-none w-[calc(100vw-48px)] max-w-[360px] aspect-square md:w-[600px] md:h-[600px] md:max-w-none">
+      <div className="absolute top-1/2 inset-x-0 mx-auto transform -translate-y-1/2 z-10 pointer-events-none w-[calc(100vw-48px)] max-w-[360px] aspect-square md:w-[600px] md:h-[600px] md:max-w-none">
       {/* Gate 1 (Outer - Magenta) */}
-      <div className="gate-outer absolute top-1/2 left-1/2 border-[4px] border-secondary border-dashed rounded-full opacity-60 filter blur-[1px] w-[calc(100vw-48px)] max-w-[360px] aspect-square md:w-[500px] md:h-[500px] md:max-w-none" style={{boxShadow: "0 0 30px rgba(255, 171, 243, 0.3) inset, 0 0 30px rgba(255, 171, 243, 0.3)"}}></div>
+      <div className="gate-outer absolute top-1/2 inset-x-0 mx-auto transform -translate-y-1/2 border-[4px] border-secondary border-dashed rounded-full opacity-60 filter blur-[1px] w-[calc(100vw-48px)] max-w-[360px] aspect-square md:w-[500px] md:h-[500px] md:max-w-none" style={{boxShadow: "0 0 30px rgba(255, 171, 243, 0.3) inset, 0 0 30px rgba(255, 171, 243, 0.3)"}}></div>
       {/* Gate 2 (Inner - Lime) */}
-      <div className="gate-inner absolute top-1/2 left-1/2 w-[300px] h-[300px] border-[6px] border-tertiary-container border-dotted rounded-full opacity-80" style={{boxShadow: "0 0 20px rgba(59, 255, 23, 0.4) inset, 0 0 20px rgba(59, 255, 23, 0.4)"}}></div>
+      <div className="gate-inner absolute top-1/2 inset-x-0 mx-auto transform -translate-y-1/2 w-[300px] h-[300px] border-[6px] border-tertiary-container border-dotted rounded-full opacity-80" style={{boxShadow: "0 0 20px rgba(59, 255, 23, 0.4) inset, 0 0 20px rgba(59, 255, 23, 0.4)"}}></div>
       {/* Player Signal (Center - Cyan) */}
-      <div className="signal-core absolute top-1/2 left-1/2 w-6 h-6 bg-primary rounded-full z-20"></div>
+      <div className="signal-core absolute top-1/2 inset-x-0 mx-auto transform -translate-y-1/2 w-6 h-6 bg-primary rounded-full z-20"></div>
       {/* Signal Trail/Motion */}
-      <div className="absolute top-1/2 left-1/2 w-20 h-1 bg-gradient-to-l from-primary to-transparent transform -translate-y-1/2 -translate-x-full opacity-50 filter blur-[2px]"></div>
+      <div className="absolute top-1/2 right-1/2 w-20 h-1 bg-gradient-to-l from-primary to-transparent transform -translate-y-1/2 opacity-50 filter blur-[2px]"></div>
       </div>
       {/* HUD: TopAppBar (Shared Component Base) */}
-      <nav className="flex justify-between items-start px-hud-safe-area pt-hud-safe-area w-full z-50 absolute top-0 left-0 pointer-events-none">
+      <nav className="flex flex-wrap justify-between items-start px-hud-safe-area pt-hud-safe-area w-full z-50 absolute top-0 left-0 pointer-events-none">
       {/* Left HUD: Brand & Level */}
       <div className="flex flex-col gap-2 bg-surface/60 backdrop-blur-xl border border-primary/20 shadow-[0_0_15px_rgba(0,220,229,0.3)] rounded-lg p-4 pointer-events-auto scanline relative overflow-hidden">
       <div className="absolute inset-0 border border-t-0 border-l-0 border-r-0 border-b-primary opacity-50" style={{background: "linear-gradient(to top right, transparent, rgba(0, 220, 229, 0.1))"}}></div>
@@ -47,9 +47,9 @@ export function GameplayVectorgateLite({ actions, runtime }: GameplayVectorgateL
       </div>
       </div>
       {/* Center HUD: Health Bar (Progress Bar Component) */}
-      <div className="flex flex-col items-center gap-2 mt-4 pointer-events-auto">
+      <div className="hidden md:flex flex-col items-center gap-2 mt-4 pointer-events-auto">
       <span className="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">Shield Integrity</span>
-      <div className="flex gap-1 w-64 h-3 bg-surface-container-highest border border-outline-variant p-[2px]">
+      <div className="flex gap-1 w-full max-w-64 h-3 bg-surface-container-highest border border-outline-variant p-[2px]">
       {/* Segmented Health */}
       <div className="h-full w-1/5 bg-tertiary-container shadow-[0_0_10px_rgba(59,255,23,0.8)]"></div>
       <div className="h-full w-1/5 bg-tertiary-container shadow-[0_0_10px_rgba(59,255,23,0.8)]"></div>
@@ -61,7 +61,7 @@ export function GameplayVectorgateLite({ actions, runtime }: GameplayVectorgateL
       <span className="font-headline-md text-headline-md text-tertiary-container neon-glow-tertiary">80%</span>
       </div>
       {/* Right HUD: Score & Actions */}
-      <div className="flex flex-col items-end gap-4 pointer-events-auto">
+      <div className="flex flex-col items-end gap-4 pointer-events-auto max-md:scale-75 max-md:origin-top-right">
       {/* Score Multiplier & Score */}
       <div className="flex flex-col items-end score-active">
       <span className="font-label-sm text-label-sm uppercase tracking-widest text-secondary neon-glow-secondary">x4 Multiplier</span>
@@ -82,7 +82,7 @@ export function GameplayVectorgateLite({ actions, runtime }: GameplayVectorgateL
       </div>
       </nav>
       {/* Bottom HUD: Session Info */}
-      <div className="absolute bottom-hud-safe-area left-hud-safe-area right-hud-safe-area flex justify-between items-end pointer-events-none z-50">
+      <div className="absolute bottom-4 left-4 right-4 flex justify-between items-end pointer-events-none z-50">
       {/* Left: Session Time */}
       <div className="flex items-center gap-2 bg-surface/40 backdrop-blur-md border border-primary/30 p-2 rounded pointer-events-auto scanline">
       <Clock className="text-primary text-sm" aria-hidden={true} focusable="false" />
