@@ -15,6 +15,9 @@ import {
   savePreferences,
   setHighScore,
 } from "./features/vectorgate-lite/vectorgate-lite.repo";
+import { actStartGame } from "./features/surf-gameplay/act_start_game";
+import { actPauseGame } from "./features/surf-gameplay/act_pause_game";
+import { actRestartGame } from "./features/surf-gameplay/act_restart_game";
 
 function useGlobalApp() {
   const runtime = getOrCreateRuntime();
@@ -43,16 +46,12 @@ export default function App() {
 
   const gameplayActions = {
     "settings-1": () => setScreen("settings"),
-    "pause-esc-2": () => {
-      getOrCreateRuntime().setPaused(!getOrCreateRuntime().state.paused);
-    },
+    "pause-esc-2": () => actPauseGame(),
   };
 
   const settingsActions = {
     "settings-1": () => setScreen("settings"),
-    "pause-2": () => {
-      getOrCreateRuntime().setPaused(!getOrCreateRuntime().state.paused);
-    },
+    "pause-2": () => actPauseGame(),
     "save-preferences-3": () => {
       savePreferences(loadPreferences());
       setScreen("gameplay");
@@ -99,6 +98,8 @@ declare global {
         resume: () => void;
         reset: () => void;
         setScreen: (s: "gameplay" | "settings" | "menu") => void;
+        startGame: () => void;
+        restartGame: () => void;
       };
     };
   }
@@ -118,5 +119,7 @@ window.app = {
       resetRuntime().start();
     },
     setScreen,
+    startGame: actStartGame,
+    restartGame: actRestartGame,
   },
 };
